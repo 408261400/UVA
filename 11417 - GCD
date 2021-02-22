@@ -1,0 +1,30 @@
+#include <iostream>
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int GCD(int a,int b){
+    if(b==0){
+        return a;
+    }
+    else{
+        return GCD(b,a%b);
+    }
+}
+int main()
+{
+    int num;
+    while(cin >> num){
+        if(num==0){
+            break;
+        }
+        int g=0;
+        for(int i=1;i<num;i++){
+            for(int j=i+1;j<=num;j++){
+                g+=GCD(i,j);
+            }
+        }
+        cout << g << endl;
+    }
+    return 0;
+}
